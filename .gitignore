@@ -38,6 +38,7 @@
 /Release/
 /x64/
 /x86/
+/output/
 
 # Ignore IDE-specific files
 .idea/
