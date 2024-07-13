@@ -30,3 +30,23 @@
 *.exe
 *.out
 *.app
+
+# Ignore directories
+/bin/
+/build/
+/Debug/
+/Release/
+/x64/
+/x86/
+
+# Ignore IDE-specific files
+.idea/
+.vscode/
+*.suo
+*.user
+*.userossc
+*.sln.docstates
+
+# Ignore logs and temporary files
+*.log
+*.tmp
