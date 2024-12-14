@@ -12,7 +12,7 @@ public:
         std::cout << "Created Entity!" << std::endl;
     }
 
-    Entity(float x, float y)
+    Entity(float& x, float &y)
     {
         X = x;
         Y = y;
@@ -32,8 +32,12 @@ public:
 
 void Function()
 {
-    Entity e;
-    e.Print();
+    float a = 2;
+    float b = 3;
+    //Entity e(a, b);
+    Entity* e = new Entity();
+    e->Print();
+    delete e;
 }
 
 int main()

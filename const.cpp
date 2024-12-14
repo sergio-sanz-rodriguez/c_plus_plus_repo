@@ -1,15 +1,17 @@
 #include <iostream>
 #include <string>
 
+// REMEMBER TO MARK
 class Entity
 {
     private:    
     int m_X, m_Y;
     int *p_m_X;
-    // you can use "mutable" if you need to modify the variable event though it is insieda a constant method.
+    // you can use "mutable" if you need to modify the variable event though it is inside a constant method.
     mutable int var;
     
     public:
+    
     // With this you cannot modify class-member variables
     int GetX() const
     {

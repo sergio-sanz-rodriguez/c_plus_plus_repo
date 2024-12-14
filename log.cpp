@@ -6,6 +6,9 @@ public:
     enum Level
     {
         LevelError = 0, LevelWarning, LevelInfo
+        //const int LevelError = 0
+        //const int LevelWarning = 1
+        //const int LevelInfo = 2
     };
     
 private:

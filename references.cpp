@@ -12,6 +12,7 @@ int main() {
 
     int& ref = a;
     ref = b;
+    // a = 8, b = 8
 
     int c = 9;
     Increment(c);
