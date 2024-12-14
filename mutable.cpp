@@ -10,6 +10,8 @@ class Entity
     // By returning a reference, you avoid making a copy of the m_Name string. If the string is large or if this function is called frequently, this can save significant memory and processing time.
     const std::string& GetName() const
     {
+        //int a = 1;
+        //std::cout << ++a << std::endl;
         m_DebugCount++;
         return m_Name;
     }
