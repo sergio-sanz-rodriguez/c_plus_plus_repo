@@ -59,7 +59,7 @@ void PrintString(const String& string)
 int main()
 {
     //int a = 2;
-    //int b = a;
+    //int b = a; // we are copying to be the content of a: two memory addresses.
     //b = 3; // b is another place in the memory
     //std::cout << a << std::endl;
     //std::cout << b << std::endl;
