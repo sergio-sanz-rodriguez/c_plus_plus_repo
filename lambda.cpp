@@ -12,8 +12,8 @@ int main() {
     auto func =[](std::string username) {std::cout << username << "\n"; };
     func(username);
 
-    //int factor = 2;
-    //auto multiply = [factor](int x) { return x * factor; };
+    int factor = 2;
+    auto multiply = [factor](int x) { return x * factor; };
 
     std::cout << "lambda function with for_each \n";
 
@@ -28,5 +28,26 @@ int main() {
     for(std::string & elem2 : my_vector)
     {
         print_element(elem2);
+    }
+
+    std::vector<int> foo;
+    std::vector<int> bar;
+
+    // set some values:
+    for (int i=1; i<6; i++)
+        foo.push_back (i*10);                         // foo: 10 20 30 40 50
+
+    bar.resize(foo.size());                         // allocate space
+
+    std::transform (foo.begin(), foo.end(), bar.begin(), [](int x){return x + 1; });
+    
+    for(auto e : foo)
+    {
+        std::cout << e << std::endl;
+    }
+
+    for(auto e : bar)
+    {
+        std::cout << e << std::endl;
     }
 }

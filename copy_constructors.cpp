@@ -27,9 +27,23 @@ public:
     String(const String& other)
         : m_Size(other.m_Size)
     {
-        std::cout << "Copied!" << std::endl;
+        std::cout << "Deep Copied 1!" << std::endl;
         m_Buffer = new char[m_Size + 1];
         memcpy(m_Buffer, other.m_Buffer, m_Size + 1);
+    }
+
+    // ✅ Copy Assignment Operator (deep copy)
+    String& operator=(const String& other) {
+        if (this == &other)
+            return *this; // avoid self-assignment
+
+        delete[] m_Buffer; // clean up existing
+        std::cout << "Deep Copied 2!" << std::endl;    
+        m_Size = other.m_Size;
+        m_Buffer = new char[m_Size + 1];
+        memcpy(m_Buffer, other.m_Buffer, m_Size + 1);
+
+        return *this;
     }
 
     ~String()
@@ -78,9 +92,11 @@ int main()
     // the second class attempts to access to a memory that has been freed up.
     String string = "Cherno";
     //String* string = new String("Cherno");
-    String second = string;
-
+    String second = string;  //invokes String(const String& other)
     second[2] = 'a';
+
+    String third = "Hello";
+    third = second;
 
     std::cout << string << std::endl;
     std::cout << second << std::endl;
